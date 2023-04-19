@@ -1,0 +1,190 @@
+._box, .content-radios, .btn, .input {
+  box-sizing: border-box;
+}
+
+._d-b {
+  display: block;
+}
+
+._d-f, .container-form > .form, .container-list > .list, .content-input, .content-radios, .list-item, body {
+  display: flex;
+}
+
+._d-n, .input-radio {
+  display: none;
+}
+
+._border-n, .btn, .input {
+  border: none;
+}
+
+._c-p, .btn {
+  cursor: pointer;
+}
+
+._outline-n, .input {
+  outline: none;
+}
+
+._font-black, .content-radios .lb:hover, .content-radios .input-radio:nth-child(1):checked + .lb-low, .content-radios .input-radio:nth-child(3):checked + .lb-medium, .content-radios .input-radio:nth-child(5):checked + .lb-high {
+  color: hsl(0deg, 0%, 0%);
+}
+
+._bg-green, .content-radios .lb-low, .content-radios .input-radio:nth-child(1):checked + .lb-low {
+  background-color: hsl(122deg, 39%, 49%);
+}
+
+._bg-blue, .content-radios .lb-medium, .content-radios .input-radio:nth-child(3):checked + .lb-medium {
+  background-color: hsl(200deg, 100%, 50%);
+}
+
+._bg-red, .content-radios .lb-high, .content-radios .input-radio:nth-child(5):checked + .lb-high {
+  background-color: hsl(350deg, 100%, 65%);
+}
+
+._alignY, .list-item > .btn, .list-item::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+._bg-n, .btn, .input {
+  background: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 800px;
+}
+.container-form > .form {
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.25em;
+  padding: 1em;
+}
+.container-list > .list {
+  align-items: center;
+  flex-direction: column;
+  gap: 1.25em;
+  padding: 1em;
+}
+
+.content-input > .input {
+  width: 22em;
+  max-height: 3.75em;
+  border-radius: 0.8125em 0 0 0.8125em;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0 1em;
+  background-color: hsl(0deg, 0%, 96%);
+}
+.content-input > .btn {
+  background-color: hsl(122deg, 39%, 49%);
+  transition: background-color 200ms;
+  padding: 0.2em;
+  width: 3.125em;
+  height: 3.75em;
+  border-radius: 0 0.6875em 0.6875em 0;
+}
+.content-input > .btn:hover {
+  background-color: hsl(122deg, 39%, 40%);
+}
+.content-input > .btn .icon {
+  width: 100%;
+}
+.content-radios {
+  justify-content: center;
+  align-items: center;
+  height: 2.5em;
+  padding: 1em;
+  gap: 0.625em;
+  background-color: hsl(0deg, 0%, 96%);
+  border-radius: 0.6875em;
+}
+.content-radios .lb {
+  padding: 0.3125em 0.625em;
+  font-weight: 600;
+  color: hsla(0deg, 0%, 0%, 0.5);
+  border-radius: 0.4375em;
+}
+.content-radios .lb-low:not(:hover) {
+  background-color: hsl(122deg, 39%, 40%);
+}
+.content-radios .lb-medium:not(:hover) {
+  background-color: hsl(200deg, 100%, 40%);
+}
+.content-radios .lb-high:not(:hover) {
+  background-color: hsl(350deg, 40%, 55%);
+}
+.list-item {
+  height: 2em;
+  width: 60%;
+  padding: 0.5em 5em;
+  border-radius: 11px;
+  position: relative;
+  color: hsl(0deg, 0%, 96%);
+  font-weight: 600;
+}
+.list-item > .btn {
+  width: 30px;
+  order: -1;
+  left: 1.25em;
+  position: absolute;
+  background: #ed2939;
+  border-radius: 0.4375em;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.list-item > .btn::before {
+  content: "";
+  background-image: url("../../../assets/icons/trash.svg");
+  background-size: 1.5625em 1.5625em;
+  width: 1.5625em;
+  height: 1.5625em;
+  display: inline-block;
+}
+.list-item::after {
+  content: "";
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 0.4375em;
+  position: absolute;
+  right: 1.25em;
+  transition: width 200ms;
+}
+.list-item:hover:after {
+  width: 1.875em;
+}
+.list-item:hover > .btn {
+  opacity: 1;
+}
+
+.status-low::after {
+  background-color: hsl(122deg, 39%, 49%);
+}
+.status-medium::after {
+  background-color: hsl(200deg, 100%, 50%);
+}
+.status-high::after {
+  background-color: hsl(350deg, 100%, 65%);
+}
+
+/*# sourceMappingURL=styles.css.map */

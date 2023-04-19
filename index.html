@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <title>TODO List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-form">
+      <form class="form">
+        <div class="content-input">
+          <input class="input" type="text" maxlength="24">
+          <button class="btn" type="submit" title="Adicionar">
+            <img class="icon" src="assets/icons/add.svg" alt="Add icon">
+          </button>
+        </div>
+        <div class="content-radios">
+          <input class="input-radio" type="radio" id="low" value="low" name="priority" checked>
+          <label class="lb lb-low" for="low">Low</label>
+          <input class="input-radio" type="radio" id="medium" value="medium" name="priority">
+          <label class="lb lb-medium" for="medium">Medium</label>
+          <input class="input-radio" type="radio" id="high" value="high" name="priority">
+          <label class="lb lb-high" for="high">High</label>
+        </div>
+      </form>
+    </div>
+    <div class="container-list">
+      <ul class="list">
+
+      </ul>
+    </div>
+  </div>
+  <script src="assets/js/main.min.js"></script>
+</body>
+
+</html>

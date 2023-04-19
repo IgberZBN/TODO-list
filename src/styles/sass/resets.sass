@@ -1,0 +1,32 @@
+@use 'mixins' as mx
+@use 'helpers'
+
+*
+  padding: 0
+  margin: 0
+  font-family: sans-serif
+
+body, html
+  height: 100%
+
+body
+  @include mx.alignCenter
+  background-color: #212121
+
+ul
+  list-style: none
+
+.btn
+  @extend ._box
+  @extend ._border-n
+  @extend ._c-p
+  @extend ._bg-n
+
+.input
+  @extend ._box
+  @extend ._border-n
+  @extend ._outline-n
+  @extend ._bg-n
+
+  &-radio
+    @extend ._d-n

@@ -1,0 +1,164 @@
+@use 'mixins' as mx
+@use 'variables' as va
+@use 'helpers'
+@use 'resets'
+
+.container
+  width: 800px
+
+  &-form
+
+    >.form
+      @include mx.alignCenterY
+      justify-content: space-around
+      gap: 1.25em
+      padding: 1em
+
+  &-list
+
+    >.list
+      @include mx.alignCenterY
+      flex-direction: column
+      gap: 1.25em
+      padding: 1em
+      // overflow-y: scroll
+
+.content
+
+  &-input
+    @extend ._d-f
+
+    >.input
+      width: 22em
+      max-height: 3.75em
+      border-radius: 0.8125em 0 0 0.8125em
+      font-size: 1em
+      font-weight: 500
+      padding: 0 1em
+      background-color: va.$white
+
+    >.btn
+      @include mx.btn-hover(va.$green, va.$green-hover)
+      padding: .2em
+      width: 3.125em
+      height: 3.75em
+      border-radius: 0 .6875em .6875em 0
+
+      .icon
+        width: 100%
+
+  &-radios
+    @include mx.alignCenter
+    @extend ._box
+    height: 2.5em
+    padding: 1em
+    gap: .625em
+    background-color: va.$white
+    border-radius: .6875em
+
+    .lb
+      padding: 0.3125em 0.625em
+      font-weight: 600
+      color: va.$black-hover
+      border-radius: .4375em
+
+      >&-low
+        @extend ._bg-green
+
+        &:not(:hover)
+          background-color: va.$green-hover
+
+      >&-medium
+        @extend ._bg-blue
+
+        &:not(:hover)
+          background-color: va.$blue-hover
+
+      >&-high
+        @extend ._bg-red
+
+        &:not(:hover)
+          background-color: va.$red-hover
+
+      &:hover
+        @extend ._font-black
+
+    .input-radio:nth-child(1):checked + .lb-low
+      @extend ._font-black
+      @extend ._bg-green
+    .input-radio:nth-child(3):checked + .lb-medium
+      @extend ._font-black
+      @extend ._bg-blue
+    .input-radio:nth-child(5):checked + .lb-high
+      @extend ._font-black
+      @extend ._bg-red
+
+.list-item
+  @extend ._d-f
+  @include mx.shadow
+  height: 2em
+  width: 60%
+  padding: .5em 3em
+  border-radius: 11px
+  position: relative
+  color: va.$white
+  font-weight: 600
+  font-size: 1.4em
+  background: #3C3E42
+  transform: scale(1)
+  transition: transform 200ms
+
+  >.btn
+    @extend ._alignY
+    width: 30px
+    order: -1
+    left: 1.25em
+    position: absolute
+    background: #ed2939
+    border-radius: 0.4375em
+    opacity: 0
+    transition: opacity 300ms
+
+    &::before
+      content: ""
+      background-image: url("../../../assets/icons/trash.svg")
+      background-size: va.$remove-size va.$remove-size
+      width: va.$remove-size
+      height: va.$remove-size
+      display: inline-block
+
+  &::after
+    @extend ._alignY
+    content: ""
+    width: 1.25em
+    height: 1.25em
+    border-radius: .4375em
+    position: absolute
+    right: 1.25em
+    transition: width 200ms
+
+  &:hover
+    transform: scale(1.1)
+
+    &:after
+      width: 1.875em
+
+    >.btn
+      opacity: 1
+
+.status
+  &-low
+    &:hover
+      @include mx.shadowGreen
+    &::after
+      background-color: va.$green
+  &-medium
+    &:hover
+      @include mx.shadowBlue
+    &::after
+      background-color: va.$blue
+  &-high
+    &:hover
+      @include mx.shadowRed
+    &::after
+      background-color: va.$red

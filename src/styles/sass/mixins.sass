@@ -1,0 +1,29 @@
+@use 'variables' as va
+@use 'helpers'
+
+@mixin btn-hover($normal, $hover-state)
+  background-color: $normal
+  transition: background-color 200ms
+  &:hover
+    background-color: $hover-state
+
+@mixin alignCenter
+  @extend ._d-f
+  justify-content: center
+  align-items: center
+
+@mixin alignCenterY
+  @extend ._d-f
+  align-items: center
+
+@mixin shadow
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px rgba(0, 0, 0, 0.25)
+
+@mixin shadowBlue
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(200, 100%, 40%, .25)
+
+@mixin shadowRed
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(350, 40%, 55%, .25)
+
+@mixin shadowGreen
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(122, 39%, 40%, .25)
