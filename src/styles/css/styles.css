@@ -135,20 +135,24 @@ ul {
   background-color: hsl(350deg, 40%, 55%);
 }
 .list-item {
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px rgba(0, 0, 0, 0.25);
   height: 2em;
   width: 60%;
-  padding: 0.5em 5em;
+  padding: 0.5em 3em;
   border-radius: 11px;
   position: relative;
   color: hsl(0deg, 0%, 96%);
   font-weight: 600;
+  font-size: 1.4em;
+  background: #3C3E42;
+  transform: scale(1);
+  transition: transform 200ms;
 }
 .list-item > .btn {
   width: 30px;
   order: -1;
   left: 1.25em;
   position: absolute;
-  background: #ed2939;
   border-radius: 0.4375em;
   opacity: 0;
   transition: opacity 300ms;
@@ -156,10 +160,13 @@ ul {
 .list-item > .btn::before {
   content: "";
   background-image: url("../../../assets/icons/trash.svg");
-  background-size: 1.5625em 1.5625em;
-  width: 1.5625em;
-  height: 1.5625em;
+  background-size: 1.75em 1.75em;
+  width: 1.75em;
+  height: 1.75em;
   display: inline-block;
+}
+.list-item > .btn:hover:before {
+  transform: scale(1.2);
 }
 .list-item::after {
   content: "";
@@ -170,6 +177,9 @@ ul {
   right: 1.25em;
   transition: width 200ms;
 }
+.list-item:hover {
+  transform: scale(1.1);
+}
 .list-item:hover:after {
   width: 1.875em;
 }
@@ -177,11 +187,20 @@ ul {
   opacity: 1;
 }
 
+.status-low:hover {
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(122deg, 39%, 40%, 0.25);
+}
 .status-low::after {
   background-color: hsl(122deg, 39%, 49%);
 }
+.status-medium:hover {
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(200deg, 100%, 40%, 0.25);
+}
 .status-medium::after {
   background-color: hsl(200deg, 100%, 50%);
+}
+.status-high:hover {
+  box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.087), 0px 0px 1.4px rgba(0, 0, 0, 0.125), 0px 0px 3.3px rgba(0, 0, 0, 0.163), 0px 0px 11px hsla(350deg, 40%, 55%, 0.25);
 }
 .status-high::after {
   background-color: hsl(350deg, 100%, 65%);
