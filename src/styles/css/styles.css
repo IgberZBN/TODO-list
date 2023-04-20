@@ -80,6 +80,24 @@ ul {
   gap: 1.25em;
   padding: 1em;
 }
+.container-list {
+  height: 17.09375em;
+  overflow-y: scroll;
+}
+.container-list::-webkit-scrollbar {
+  width: 5px;
+}
+.container-list::-webkit-scrollbar-track {
+  background-color: hsla(0deg, 0%, 96%, 0.2);
+  border-radius: 7px;
+}
+.container-list::-webkit-scrollbar-thumb {
+  background: hsl(0deg, 0%, 96%);
+  border-radius: 7px;
+}
+.container-list::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0deg, 0%, 72%);
+}
 .container-list > .list {
   align-items: center;
   flex-direction: column;
