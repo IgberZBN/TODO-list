@@ -4,7 +4,7 @@
 @use 'resets'
 
 .container
-  width: 800px
+  width: min(96vw,800px)
 
   &-form
 
@@ -13,6 +13,7 @@
       justify-content: space-around
       gap: 1.25em
       padding: 1em
+      flex-wrap: wrap
 
   &-list
     height: 17.09375em
@@ -42,6 +43,7 @@
 
     >.input
       width: 22em
+      width: clamp(100%, 50vw, 22em)
       max-height: 3.75em
       border-radius: 0.8125em 0 0 0.8125em
       font-size: 1em
@@ -107,15 +109,16 @@
 
 .list-item
   @extend ._d-f
+  @extend ._box
   @include mx.shadow
   height: 2em
-  width: 60%
+  width: min(100%, 25em)
   padding: .5em 3em
   border-radius: 11px
   position: relative
   color: va.$white
   font-weight: 600
-  font-size: 1.4em
+  font-size: clamp(1em, 5vw, 1.4em)
   background: #3C3E42
   transform: scale(1)
   transition: transform 200ms
